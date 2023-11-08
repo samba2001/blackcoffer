@@ -9,7 +9,10 @@ const Header =(props)=>{
     useEffect(() => {
         const heading = location.pathname.split('/')[1];
       console.log('URL has changed:', heading);
-      setSideHeading(heading)
+      if (heading === ''){
+        setSideHeading('Dashboard')
+      }
+      else setSideHeading(heading)
     }, [location.pathname]);
 
     if( reportType === 'reports' ){
